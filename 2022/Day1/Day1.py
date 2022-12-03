@@ -20,3 +20,8 @@ max_elf_total = max(elf_list)
 print(max_elf_total)
 
 file1.close()
+
+# Part 2 addition
+elf_list.sort(reverse=True)
+top_3_elf_sum = elf_list[0] + elf_list[1] + elf_list[2]
+print(top_3_elf_sum)
