@@ -1,0 +1,31 @@
+Problem Domain: See ProblemDomain.txt file.
+
+Questions:
+Are all elves calorie counts separated by an empty line? Yes.
+What do each of the lines in the input file have at the end of the line? New line character. "\n"
+Will any elves not be holding a snack? No.
+
+Input/Output:
+Input: Text file
+Output: integer
+
+Big O:
+Space:
+Time:
+
+Test cases:
+
+Visualization:
+See alternate paper.
+
+Algorithm:
+1. Open input file.
+2. Create list variable, elf total.
+3. Create loop.
+    a. Read in line of file.
+    b. Check if empty line:
+        1. No, add to elf total.
+        2. Yes, push elf total to list.
+4. Find max value in list.
+5. Return max value.
+6. Close input file.
