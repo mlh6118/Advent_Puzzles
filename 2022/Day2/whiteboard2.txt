@@ -1,0 +1,30 @@
+Problem Domain: See ProblemDomain.txt
+
+Questions:
+1. Will there ever be a round where only one RPS is available?
+
+Input/Output:
+Input: Two chars
+Output: a number
+
+Big O:
+Space:
+Time:
+
+Test Cases:
+
+Visualization:
+See alternate paper.
+
+Algorithm:
+1. Open input file.
+2. Create variable total_score.
+3. Read line of input and split based on space between chars.
+4. Check second char for X, Y, or Z. (R = X, P = Y, S = Z)
+5. Add points based on second char. (X = 1, Y = 2, Z = 3)
+6. Compare second char to first char to determine win, loss, or draw.
+    Draw (3pts) => A = X, B = Y, C = Z
+    Loss (0pts) => B > X, C > Y, A > Z
+    Win  (6pts) => X > C, Y > A, Z > B
+7. Add points to total score based on win, loss, or draw.
+8. Return total score.
