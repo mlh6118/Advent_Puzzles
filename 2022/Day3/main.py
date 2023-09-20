@@ -73,9 +73,7 @@ def Rucksacks():
 
     for line in Lines:
       line = line.strip()
-      print(line)
       num_chars = len(line)
-      print(num_chars)
       if num_chars % 2 == 1:
         num_chars -= 1
       string1 = line[0:int(num_chars / 2)]
@@ -89,11 +87,11 @@ def Rucksacks():
             same_letter = True
             letter_value = dict.get(letter1)
             total_value = total_value + letter_value
-            print(total_value)
             break
         if same_letter == True:
           break
       
   return total_value
 
-Rucksacks()
+total = Rucksacks()
+print(total)
