@@ -1,13 +1,4 @@
-# Advent of Code - Day 3, Problem 1
-# 1. Create function.
-# 1a. Create loop.
-# 2. Determine number of characters in rucksack.
-# 3. Split string into two equal strings. (Ever uneven number?)
-# 4. Loop through first string and check if character in second string.
-# 5. Return duplicated letter.
-# 6. Get value of letter from dictionary and add to total sum.
-# 7. Print total sum. (for checking)
-# 8. Return total sum.
+# Advent of Code - Day 3
 
 dict = {
     "a": 1,
@@ -64,6 +55,12 @@ dict = {
     "Z": 52
 }
 
+# Problem 1
+# Determine the matching character in the first half of the rucksack with the
+# second half of the rucksack.  Get the value of the character from the
+# dictionary and add it to a running total.  Return the final total and print
+# it out.
+
 def Rucksacks():
 
   with open('input.txt', 'r') as file:
@@ -80,7 +77,7 @@ def Rucksacks():
       string2 = line[int(num_chars / 2 ):]
 
       same_letter = False
-      
+
       for letter1 in string1:
         for letter2 in string2:
           if letter1 == letter2:
@@ -90,8 +87,27 @@ def Rucksacks():
             break
         if same_letter == True:
           break
-      
+
   return total_value
 
 total = Rucksacks()
 print(total)
+
+# Problem 2
+# Determine the item (character) that is the same in three consecutive rows
+# of data.  Add the value of the item to the running total.  Go to the next
+# three rows.  Return the final total and print.
+
+def Rucksacks2():
+
+    with open('input_sample.txt', 'r') as file:
+        total_value = 0
+
+        i = 0
+
+        Lines = file.readlines()
+
+        for i in range(0, len(Lines), 3):
+            line1 = Lines[i]
+            line2 = Lines[i+1]
+            line3 = Lines[i+2]
