@@ -55,6 +55,7 @@ dict = {
     "Z": 52
 }
 
+
 # Problem 1
 # Determine the matching character in the first half of the rucksack with the
 # second half of the rucksack.  Get the value of the character from the
@@ -62,6 +63,32 @@ dict = {
 # it out.
 
 def Rucksacks():
+    with open('input.txt', 'r') as file:
+        total_value = 0
+
+        Lines = file.readlines()
+
+        for line in Lines:
+            line = line.strip()
+            num_chars = len(line)
+            if num_chars % 2 == 1:
+                num_chars -= 1
+            string1 = line[0:int(num_chars / 2)]
+            string2 = line[int(num_chars / 2):]
+
+            same_letter = False
+
+            for letter1 in string1:
+                for letter2 in string2:
+                    if letter1 == letter2:
+                        same_letter = True
+                        letter_value = dict.get(letter1)
+                        total_value = total_value + letter_value
+                        break
+                if same_letter == True:
+                    break
+
+    return total_value
 
   with open('input.txt', 'r') as file:
     total_value = 0
@@ -100,7 +127,8 @@ print(total)
 
 def Rucksacks2():
 
-    with open('input_sample.txt', 'r') as file:
+  with open('input.txt', 'r') as file:
+
         total_value = 0
 
         i = 0
@@ -109,5 +137,27 @@ def Rucksacks2():
 
         for i in range(0, len(Lines), 3):
             line1 = Lines[i]
-            line2 = Lines[i+1]
-            line3 = Lines[i+2]
+            line2 = Lines[i + 1]
+            line3 = Lines[i + 2]
+
+            same_letter = False
+
+            for letter1 in line1:
+                for letter2 in line2:
+                    if letter1 == letter2:
+                        for letter3 in line3:
+                            if letter1 == letter3 and letter2 == letter3:
+                                same_letter = True
+                                letter_value = dict.get(letter1)
+                                total_value = total_value + letter_value
+                                break
+                    if same_letter == True:
+                        break
+                if same_letter == True:
+                    break
+
+        return total_value
+
+
+total = Rucksacks2()
+print(total)
