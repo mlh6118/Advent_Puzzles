@@ -28,8 +28,12 @@ def Cleanup():
 
         return total
 
-print(Cleanup())
+print('Cleanup = ' + Cleanup())
 
+
+# Day 4: Camp Cleanup - Part 2
+# This program will determine the number of elf pairs that have assignments
+# that overlap in any of their assignments.
 
 def Cleanup_Overlap():
     with open('input.txt', 'r') as file:
@@ -66,4 +70,4 @@ def Cleanup_Overlap():
 
     return total_overlaps
 
-print(Cleanup_Overlap())
+print('Cleanup overlaps = ' + Cleanup_Overlap())
